@@ -8,15 +8,15 @@ public class Company {
     private BigDecimal account = new BigDecimal(0);
     private int tradeCounter = 0;
 
-    private int stoneSwordQuantity = 10;
-    private int ironSwordQuantity = 10;
-    private int stoneAxeQuantity = 10;
-    private int ironAxeQuantity = 10;
+    private int stoneSwordQuantity = 100;
+    private int ironSwordQuantity = 100;
+    private int stoneAxeQuantity = 100;
+    private int ironAxeQuantity = 100;
 
-    private int ropeQuantity = 0;
-    private int woodQuantity = 0;
-    private int ironQuantity = 0;
-    private int stoneQuantity = 0;
+    private int ropeQuantity = 1000;
+    private int woodQuantity = 1000;
+    private int ironQuantity = 1000;
+    private int stoneQuantity = 1000;
 
     private int stoneSwordSaleCounter = 0;
     private int ironSwordSaleCounter = 0;

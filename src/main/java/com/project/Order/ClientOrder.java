@@ -8,14 +8,13 @@ import java.math.BigDecimal;
 import java.util.Random;
 
 public class ClientOrder {
-    private BigDecimal orderAmount;
-    private Company company = Company.getInstance();
-    private int choice = new Random().nextInt(4);
+    private static BigDecimal orderAmount;
+    private static Company company = Company.getInstance();
 
-    public synchronized boolean makeOrder(Client client) {
-        int quantity = new Random().nextInt(5) + 1;
+    public synchronized static boolean makeOrder(Client client) {
+        int quantity = getRandomValue(5) + 1;
 
-        switch (choice) {
+        switch (getRandomValue(4)) {
             case 0: {
                 orderAmount = GoodsPrice.getIronSwordPrice().multiply(new BigDecimal(quantity));
 
@@ -71,4 +70,9 @@ public class ClientOrder {
             default: return false;
         }
     }
+
+    private static int getRandomValue(int bound) {
+        return new Random().nextInt(bound);
+    }
+
 }

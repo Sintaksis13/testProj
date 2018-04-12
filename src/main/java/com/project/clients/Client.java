@@ -26,9 +26,7 @@ public class Client implements Runnable {
             Thread.sleep(new Random().nextInt(5000));
 
             while (refusalCount != maxRefusalCount && clientAccount.compareTo(new BigDecimal(80)) >= 0) {
-                ClientOrder clientOrder = new ClientOrder();
-
-                if (!clientOrder.makeOrder(this)) {
+                if (!ClientOrder.makeOrder(this)) {
                     refusalCount++;
                 }
 

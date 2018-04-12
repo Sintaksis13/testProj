@@ -38,6 +38,7 @@ public class Auditor implements Runnable {
             if (Start.checkClients()) {
                 break;
             }
+        }
+
     }
-}
 }

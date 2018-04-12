@@ -147,6 +147,6 @@ public class Start {
         System.out.printf("   Веревка   | %17d | %9.2f%n", company.getRopeQuantity(),
                 Rope.getPrice().multiply(new BigDecimal(company.getRopeQuantity())));
 
-        System.out.println("Остаток на счету фирмы: " + company.getAccount());
+        System.out.printf("%nОстаток на счету фирмы: %6.2f", company.getAccount());
     }
 }

@@ -12,7 +12,7 @@ public class Producer implements Runnable {
 
     public void run() {
         while (true) {
-            if (checkResources()) {
+            if (checkResources() && checkGoods()) {
                 company.produceGoods(IRON_QUANTITY_FOR_ALL_TYPE_OF_GOODS, STONE_QUANTITY_FOR_ALL_TYPE_OF_GOODS,
                         WOOD_QUANTITY_FOR_ALL_TYPE_OF_GOODS, ROPE_QUANTITY_FOR_ALL_TYPE_OF_GOODS);
             }
@@ -21,6 +21,9 @@ public class Producer implements Runnable {
                 break;
             }
         }
+
+        System.out.println("\nВСЕ КЛИЕНТЫ ЗАКОНЧИЛИ СВОЮ РАБОТУ!");
+        Start.printFinalState();
     }
 
     private boolean checkResources() {
@@ -30,4 +33,8 @@ public class Producer implements Runnable {
                 && (company.getRopeQuantity() >= ROPE_QUANTITY_FOR_ALL_TYPE_OF_GOODS);
     }
 
+    private boolean checkGoods() {
+        return (company.getStoneAxeQuantity() < 5) && (company.getIronAxeQuantity() < 5)
+                && (company.getStoneSwordQuantity() < 5) && (company.getIronSwordQuantity() < 5);
+    }
 }
